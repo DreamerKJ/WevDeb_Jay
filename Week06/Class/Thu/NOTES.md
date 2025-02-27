@@ -1,5 +1,39 @@
 # Week 6 (Thu) Notes
 
+### Navigation Bars
+
+```css
+ul {
+    list-style-type: none;
+}
+
+li {
+    display: inline
+} /*Inline Displays*/
+```
+Or, you could go for floating menu bars.
+
+```css
+ul {
+    list-style-type: none;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+li a{
+    display: block;
+    padding: 10px;
+    background-color: violet;
+}
+```
+
+### Box Model
+
+> Element - Padding - Border - Margin 
+
 
 
 ---
