@@ -1,4 +1,4 @@
-# Week 6 Notes
+# Week 6 (Tue) Notes
 
 ### Linking to Pages
 
