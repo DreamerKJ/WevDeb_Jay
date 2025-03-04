@@ -1,0 +1,14 @@
+body {
+    font: 1.2em / 1.5 sans-serif;
+  }
+  
+  .box {
+    margin-top: 20px;
+    margin-right: 1em;
+    margin-bottom: 40px;
+    margin-left: 2em;
+    /*  margin: 20px 1em 40px 2em; */
+    border: 5px black dotted;
+    padding: 1em;
+  }
+  
