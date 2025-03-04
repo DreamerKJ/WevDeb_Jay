@@ -1,0 +1,45 @@
+html {
+    background-color: blue;
+}
+h2 {
+    border: 3px black solid;
+    color: Red;
+    background-color: pink;
+    margin: 0px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+p {
+    background-color: white;
+    padding-left: 10px;
+    border: 1px black solid
+}
+
+p span{
+    display: inline-block;
+    background-color: black;
+    color: white;
+    margin: 0px;
+    padding: 10px;
+}
+
+h3 {
+    background-color: green;
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+h3 span{
+    display: inline-block;
+    background-color: black;
+    color: white;
+    margin: -10px 0px -10px 0px;
+    padding: 10px;
+}
+
+img {
+    width: 100%
+}
+
