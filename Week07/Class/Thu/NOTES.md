@@ -48,3 +48,13 @@ You can also use matrix to do all of this at once.
     transform: matrix(1, -0.3, 0, 1, 0, 0);
 }
 ```
+
+### Transition
+```css
+{
+    transition: width 2s, transform 5s;
+}
+```
+
+You can set how long transitions of changes take effect.
+CSS needs a user action to trigger this (like hover), later with javascript this will be possible to trigger this based on more things, as well as just constant loops.
