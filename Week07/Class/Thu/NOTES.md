@@ -1,4 +1,4 @@
-# Week 7 (Tue) Notes
+# Week 7 (Thu) Notes
 ## Images Things
 ### Sizing Images 
 Cropping images! Yay!
