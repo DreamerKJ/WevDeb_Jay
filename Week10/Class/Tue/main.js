@@ -30,7 +30,10 @@ let carName = "Volvo";
 document.getElementById("car").innerHTML = carName + " is a car";
 
 let lhs = 1283, rhs = 4782;
-document.getElementById("math").innerHTML = lhs + " * " + rhs + " is " + lhs*rhs + ".";
+document.getElementById("mathbutton").onclick = function() {
+    document.getElementById("math").innerHTML = lhs + " * " + rhs + " is " + lhs*rhs + ".";
+
+}
 
 let nah = false;
 
@@ -58,3 +61,13 @@ document.getElementById("intro").innerHTML = "Hello, my name is " + name + ", I 
     " years old and I can code Javascript: " + canICodeJavascript + ".";
 
 
+var isOn = true;
+function switchOff() {
+    if(isOn == true) {
+        alert("The Light is ON");
+        isOn = false;
+    } else {
+        alert("The Light is OFF");
+        isOn = true;
+    }
+}
