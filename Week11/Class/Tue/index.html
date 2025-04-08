@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>These are my groceries :)</h1>
+    <p id="grocery" style="text-align: center;"></p>
+
+    <br>
+    <br>
+    <h2>the math section</h2>
+
+    <p id="original">12345679</p>
+    <p id="multpower">1</p>
+    <p id="multtext">12345679</p>
+    <input type="submit" value="Multiply" id="mult9">
+
+    <br>
+    <br>
+    <br>
+    <input type="number" id="num1">
+    <input type="number" id="num2">
+    <input type="submit" value="DO STUFF" id="stuff">
+    <br>
+
+    <p id="test" style="white-space: pre;">Hi, I'm just a here for testing random stuff. Ignore me :)</p>
+
+    <script>
+        const groceries = ["zucchini","ground pork","bell peppers","salt shaker","butter"]
+        grocery.textContent = groceries
+
+        const original = document.getElementById("original");
+        const multpower = document.getElementById("multpower");
+        const multtext = document.getElementById("multtext");
+        function time9() {
+            multpower.textContent++
+            multtext.textContent = original.textContent * multpower.textContent
+        }
+        const mult9 = document.getElementById("mult9");
+        mult9.addEventListener("click",time9)
+
+       
+    </script>
+</body>
+</html>
