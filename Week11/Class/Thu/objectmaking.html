@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Object basics: Task 2</title>
+    <style>
+        html {
+            background-color: black;
+            background-image: url(amazingdevil.webp);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            color: rgb(244, 82, 71);
+        }
+
+        p {
+            font-size: 2em;
+            background-color: rgba(0,0,0,0.5);
+            margin: 0.5em 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+  </head>
+
+  <body>
+    <section class="preview"></section>
+  </body>
+  <script>
+    var band = {
+        name: "The Amazing Devil",
+        nationality: "English",
+        genre: "Alt-Folk",
+        numbers: 2,
+        formed: 2016,
+        split: false,
+        albums: [
+            {
+                name: "Love Run",
+                released: 2016,
+            },
+            {
+                name: "The Horror and the Wild",
+                released: 2020,
+            },
+            {
+                name: "Ruin",
+                released: 2021,
+            }
+        ]
+    }
+
+    // Don't edit the code below here!
+    let yearsActive = band.split
+      ? "from " + band.formed + " to " + new Date().getFullYear()
+      : "since " + band.formed;
+
+    let bandInfo =
+      band.name +
+      " is an " +
+      band.nationality +
+      " " +
+      band.genre +
+      " band. They were active " +
+      yearsActive +
+      ". Their first album, " +
+      band.albums[0].name +
+      ", was released in " +
+      band.albums[0].released +
+      ".";
+
+    const section = document.querySelector("section");
+    let para1 = document.createElement("p");
+    para1.textContent = bandInfo;
+    section.appendChild(para1);
+  </script>
+</html>
