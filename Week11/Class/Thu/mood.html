@@ -23,6 +23,25 @@
         padding: 0.5rem;
         margin: 0.5rem;
       }
+
+      div {
+        position:relative;
+        height: 100%;
+        width:100%;
+    }
+
+      div #bgImg {
+        position: absolute;
+        opacity: 0;
+        width: 500px;
+        height: 500px;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        z-index: -1;
+      }
     </style>
   </head>
   <body>
@@ -39,6 +58,7 @@
 
     <h2 id="moodMessage">How are you feeling?</h2>
     <img id="moodImg" src="Question.jpg" alt="Mood face" />
+    <div><img id="bgImg" src="angry.png"/></div>
     
     <br>
     <button id="randomMoodBtn">Random Mood</button>
@@ -51,8 +71,11 @@
         rndbutton.addEventListener("click", randomMood);
       });
 
+      setMood(localStorage.getItem("myMood"))
+
       function randomMood() {
         mood = Math.floor(Math.random() * 5);
+        localStorage.setItem("myMood", mood);
         setMood(mood);
       }
 
@@ -60,6 +83,7 @@
         // Get input value
         let input = document.getElementById("moodInput").value;
         let n = parseInt(input);
+        localStorage.setItem("myMood", n);
         console.log(n);
 
         setMood(n);
@@ -69,38 +93,50 @@
       function setMood(n) {
         const message = document.getElementById("moodMessage");
         const img = document.getElementById("moodImg");
+        const bgimg = document.getElementById("bgImg");
 
         // TODO: Replace with real switch logic!
         switch (n) {
           case 0:
             document.body.style.backgroundColor = "palevioletred";
             message.textContent = ">:("
-            img.src = "angry.png";
+            bgimg.style.opacity = 0.3;
+            bgimg.src = "angry.png"
+            img.src = "angry.png"
             break;
           case 1:
             document.body.style.backgroundColor = "yellow";
             message.textContent = ":)"
-            img.src = "happy.png";
+            bgimg.style.opacity = 0.3;
+            bgimg.src = "happy.png";
+            img.src = "happy.png"
             break;
           case 2:
             document.body.style.backgroundColor = "gray";
             message.textContent = ":|"
+            bgimg.style.opacity = 0.3;
+            bgimg.src = "okay.png";
             img.src = "okay.png";
             break;
           case 3:
             document.body.style.backgroundColor = "skyblue";
             message.textContent = ":("
+            bgimg.style.opacity = 0.3;
+            bgimg.src = "sad.png";
             img.src = "sad.png";
             break;
           case 4:
             document.body.style.backgroundColor = "purple";
             message.textContent = "zzz"
+            bgimg.style.opacity = 0.3;
+            bgimg.src = "sleepy.png";
             img.src = "sleepy.png";
             break;
           default:
             document.body.style.backgroundColor = "white";
             message.textContent = "Please enter a number from 0 to 4!";
-            img.src = "placeholder.jpg";
+            img.src = "Question.jpg";
+            bgimg.style.opacity = 0;
             document.body.style.backgroundColor = "#f0f0f0";
         }
       }
