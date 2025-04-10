@@ -1,0 +1,109 @@
+<!-- mood-changer-template.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mood Changer</title>
+    <style>
+      body {
+        text-align: center;
+        padding: 2rem;
+        font-family: sans-serif;
+        background-color: #f0f0f0;
+      }
+      #moodImg {
+        width: 200px;
+        height: 200px;
+        object-fit: contain;
+        margin-top: 1rem;
+      }
+      input,
+      button {
+        font-size: 1.2rem;
+        padding: 0.5rem;
+        margin: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Mood Changer 😎</h1>
+
+    <input
+      type="number"
+      id="moodInput"
+      min="0"
+      max="4"
+      placeholder="Enter a number (0–4)"
+    />
+    <button id="setMoodBtn">Set Mood</button>
+
+    <h2 id="moodMessage">How are you feeling?</h2>
+    <img id="moodImg" src="Question.jpg" alt="Mood face" />
+    
+    <br>
+    <button id="randomMoodBtn">Random Mood</button>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const button = document.getElementById("setMoodBtn");
+        button.addEventListener("click", changeMood);
+        const rndbutton = document.getElementById("randomMoodBtn");
+        rndbutton.addEventListener("click", randomMood);
+      });
+
+      function randomMood() {
+        mood = Math.floor(Math.random() * 5);
+        setMood(mood);
+      }
+
+      function changeMood() {
+        // Get input value
+        let input = document.getElementById("moodInput").value;
+        let n = parseInt(input);
+        console.log(n);
+
+        setMood(n);
+        // Get DOM elements
+      }
+
+      function setMood(n) {
+        const message = document.getElementById("moodMessage");
+        const img = document.getElementById("moodImg");
+
+        // TODO: Replace with real switch logic!
+        switch (n) {
+          case 0:
+            document.body.style.backgroundColor = "palevioletred";
+            message.textContent = ">:("
+            img.src = "angry.png";
+            break;
+          case 1:
+            document.body.style.backgroundColor = "yellow";
+            message.textContent = ":)"
+            img.src = "happy.png";
+            break;
+          case 2:
+            document.body.style.backgroundColor = "gray";
+            message.textContent = ":|"
+            img.src = "okay.png";
+            break;
+          case 3:
+            document.body.style.backgroundColor = "skyblue";
+            message.textContent = ":("
+            img.src = "sad.png";
+            break;
+          case 4:
+            document.body.style.backgroundColor = "purple";
+            message.textContent = "zzz"
+            img.src = "sleepy.png";
+            break;
+          default:
+            document.body.style.backgroundColor = "white";
+            message.textContent = "Please enter a number from 0 to 4!";
+            img.src = "placeholder.jpg";
+            document.body.style.backgroundColor = "#f0f0f0";
+        }
+      }
+    </script>
+  </body>
+</html> 
