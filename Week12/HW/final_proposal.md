@@ -17,6 +17,8 @@ Skill usage: A bunch of Javascript really. Containing the data in a form of json
 
 ---
 Wireframe: 
-TBD
+(The worst wireframe known to man)
+
+
 
 
